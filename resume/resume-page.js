@@ -101,12 +101,7 @@ const checkResumes = () => {
 // validate user at the top and redirect to login if user not found in local storage
 validateUser();
 
-// Data.json was uploaded to npoint as browser was not allowing to read a local file automatically, but both options are working perfectly fine. One has been commented, you can check that too by commenting this and uncommenting the next one
-
-//fetch("https://api.npoint.io/d161d1bf8aa3e4464ed7")
-  //with the following location, it is able to read as well
-
-  fetch("../data/data.json") // this is also working fine
+fetch("../data/data.json") // in local http-server was used for the file to be available for browser
   .then((response) => response.json())
   .then((respData) => {
     loader.style.display = "none";
